@@ -2,11 +2,17 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {SharedModule} from '../shared/shared.module';
 import {RouterModule, Routes} from '@angular/router';
+
 import {MainLayoutComponent} from './pages/main-layout/main-layout.component';
 import {HomeComponent} from './pages/home/home.component';
 import {EverythingComponent} from './pages/everything/everything.component';
 import {CategoriesComponent} from './pages/categories/categories.component';
 import {PageNotFoundComponent} from './pages/page-not-found/page-not-found.component';
+
+import {StoreModule} from '@ngrx/store';
+import * as fromNewsState from './state/index'
+import {EffectsModule} from '@ngrx/effects';
+import {effects} from './state/index';
 
 const routes: Routes = [
   {
@@ -32,7 +38,9 @@ const routes: Routes = [
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    StoreModule.forFeature('news', fromNewsState.reducer),
+    EffectsModule.forFeature(effects)
   ],
   exports: [RouterModule]
 })

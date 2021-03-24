@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 
 import {SharedModule} from './shared/shared.module';
 import {NewsModule} from './news/news.module';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -15,7 +19,10 @@ import {NewsModule} from './news/news.module';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    NewsModule
+    NewsModule,
+    StoreModule.forRoot({}, {}),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    EffectsModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]

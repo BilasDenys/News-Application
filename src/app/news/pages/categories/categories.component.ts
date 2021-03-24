@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {NewsState} from '../../state';
+import {Store} from '@ngrx/store';
+import {LoadCategoriesNews} from '../../state/News/actions';
 
 @Component({
   selector: 'app-categories',
@@ -7,9 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private  store$: Store<NewsState>) { }
 
   ngOnInit(): void {
+    this.store$.dispatch(new LoadCategoriesNews());
   }
 
 }
