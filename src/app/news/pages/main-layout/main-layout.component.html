@@ -1,11 +1,28 @@
 <div class="app">
-  <header>
+  <header class="app__header">
     <app-nav-bar></app-nav-bar>
   </header>
-  <div class="container">
-    <router-outlet></router-outlet>
+  <div class="app__container container">
+    <aside class="container__aside aside">
+      <div class="aside__title title">
+        #Sources News
+      </div>
+     <div class="aside__wrapper" *ngFor="let source of (sources$ | async)">
+      <app-sources [sourceProps]="source"></app-sources>
+     </div>
+    </aside>
+    <main class="container__main">
+      <router-outlet></router-outlet>
+    </main>
+
+    <aside>
+      <div class="aside__title title">
+        #Tags
+      </div>
+      <app-tags></app-tags>
+    </aside>
   </div>
-  <footer>
+  <footer class="app__footer">
     <app-footer></app-footer>
   </footer>
 </div>

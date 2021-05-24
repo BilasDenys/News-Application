@@ -1,1 +1,15 @@
-<p>everything works!</p>
+<div class="everything page">
+
+  <div class="everything__wrapper page_wrapper" *ngIf="!(isLoading$ | async);else loader">
+    <div class="everything__title title">
+      #Everything
+    </div>
+    <div class="everything__posts" *ngFor="let post of everythingData$ | async">
+      <app-post [postProps]="post"></app-post>
+    </div>
+  </div>
+
+  <ng-template #loader>
+    <h1>Loading....</h1>
+  </ng-template>
+</div>

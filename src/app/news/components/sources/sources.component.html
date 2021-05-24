@@ -1,0 +1,21 @@
+<div class="source">
+  <div class="source__top">
+    <div class="source__name">
+      {{ sourceProps.name }}
+    </div>
+    <div class="source__category">
+      {{ sourceProps.category | titlecase}}
+    </div>
+  </div>
+  <div class="source__content">
+    <div class="source__description">
+      {{ sourceProps.description }}
+    </div>
+
+    <div class="source__action">
+      <a href="{{ sourceProps.url }}" target="_blank" class="source__link">
+        Go to
+      </a>
+    </div>
+  </div>
+</div>

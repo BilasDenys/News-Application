@@ -1,1 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
+// @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500&display=swap');
+
+$shadow_85: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset,
+  rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
+$shadow_80: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+$shadow_77: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+$shadow__64: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+$shadow__65: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+  rgba(17, 17, 26, 0.1) 0px 0px 8px;
+$shadow__53: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+$shadow__54: rgba(27, 31, 35, 0.04) 0px 1px 0px,
+  rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
+$shadow__34: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+$shadow__35: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+$shadow__8: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+  rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+
+	$border_radius: 5px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.title {
+    margin: 1rem;
+		font-weight: 500;
+		font-size: 1.5rem;
+		color: #cccccc;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.page_wrapper {
+
+    display: flex;
+    flex-direction: column;
+    //flex-wrap: wrap;
+    align-items: center;
+    justify-content: start;
+
+}

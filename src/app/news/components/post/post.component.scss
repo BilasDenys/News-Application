@@ -1,0 +1,79 @@
+@import '../../../../styles.scss';
+
+.post{
+	//margin: 0 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+	margin-bottom: 1rem;
+	padding: 1.25rem;
+	min-width: 320px;
+	max-width: 600px;
+	box-shadow: $shadow__34;
+	border-radius: 5px;
+	position: relative;
+
+	&__top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__name {
+		font-weight: 500;
+	}
+
+	&__img {
+		margin: .5rem 0;
+		max-width: 100%;
+		border-radius:5px;
+	}
+
+	&__description {
+		overflow: hidden;
+		font-weight: 300;
+		// color: #5a5a5a;
+	}
+
+	&__action {
+		padding-top: 1rem ;
+		margin-top: 1rem ;
+		text-align: end;
+		// background-color:coral;
+	}
+
+	&__date {
+		color: #cccccc;
+	}
+
+	&__link {
+
+		padding: .5rem 1rem;
+		box-shadow: $shadow__34;
+		border-radius: $border_radius;
+		color: #202020;
+
+		&:hover {
+			background-color: #fafafa;
+			color: #484848;
+		}
+	}
+
+  &__plug {
+    min-height: 500px;
+    min-width: 559px;
+    margin: .5rem 0;
+    max-width: 100%;
+    border-radius:5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fafafa;
+    color: #ffff;
+  }
+
+}
+
+.margin {
+	margin: .5rem 0;
+}
+

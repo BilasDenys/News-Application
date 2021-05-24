@@ -1,0 +1,40 @@
+<div class="post">
+  <div class="post__top">
+    <div class="post__name">
+      {{ postProps.source.name }}
+    </div>
+
+    <div class="post__date margin">
+      {{ postProps.publishedAt | date }}
+    </div>
+  </div>
+  <div class="post__title margin">
+    {{ postProps.title }}
+  </div>
+
+  <div class="post__content margin">
+    <div class="img">
+      <img *ngIf="postProps.urlToImage !== null;else imgTemplate"
+           src="{{ postProps.urlToImage }}"
+           alt="{{ postProps.source.name }}"
+           class="post__img"
+      />
+      <ng-template #imgTemplate>
+        <h1 class="post__plug">
+          {{postProps.source.name}}
+        </h1>
+      </ng-template>
+    </div>
+    <div class="post__author margin">
+      {{ postProps.author }}
+    </div>
+    <div class="post__description margin">
+      {{ postProps.description }}
+    </div>
+    <div class="post__action margin">
+      <a class="post__link margin" href="{{ postProps.url }}" target="_blank"
+        >Go to</a
+      >
+    </div>
+  </div>
+</div>

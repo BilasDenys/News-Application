@@ -1,1 +1,14 @@
-<p>home works!</p>
+<div class="home page">
+  <div class="home__wrapper page_wrapper" *ngIf="!(isLoading$ | async);else loader">
+    <div class="home__title title">
+      #TopHealines
+    </div>
+    <div class="home__posts" *ngFor="let post of topHeadlines$ | async">
+      <app-post [postProps]="post"></app-post>
+    </div>
+  </div>
+
+  <ng-template #loader>
+    <h1>Loading....</h1>
+  </ng-template>
+</div>

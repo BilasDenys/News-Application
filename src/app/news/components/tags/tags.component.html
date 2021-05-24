@@ -1,0 +1,7 @@
+<div class="tags">
+  <ul class="tags__menu">
+    <li class="tags__list" *ngFor="let tag of tagsArray">
+      <a  (click)="setEverythingQuery(tag.query)" class="tags__link">{{tag.title}}</a>
+    </li>
+  </ul>
+</div>

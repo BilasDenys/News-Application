@@ -83,7 +83,6 @@ export class NewsEffects {
       switchMap((action: LoadEverythingNews) => {
         return this.fetchNewsService.fetchEverythingNews(action.payload).pipe(
           map(response => {
-            console.log('response everything', response);
             return new LoadEverythingNewsSuccess(response);
           }),
           catchError(error => of(new LoadEverythingNewsFail(error)))

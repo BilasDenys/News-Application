@@ -1,0 +1,29 @@
+@import "src/styles.scss";
+
+.tags {
+  display: flex;
+  justify-content: center;
+  margin-right: 1.25rem ;
+  padding: .5rem;
+  box-shadow: $shadow__34;
+  border-radius: $border_radius;
+
+  &__menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+  }
+  &__list {
+    margin: .25rem .25rem;
+    padding: .25rem .75rem;
+    background-color: #fafafa;
+    &:hover {
+      box-shadow: $shadow__34;
+      color: #484848;
+    }
+    border-radius: $border_radius;
+  }
+  &__link {
+    color: #484848;
+  }
+}

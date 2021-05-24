@@ -1,1 +1,15 @@
-<p>categories works!</p>
+<div class="categories page">
+
+	<div class="categories__wrapper page_wrapper" *ngIf="!(isLoading$ | async);else loader">
+    <div class="categories__title title">
+      #{{(category$ | async ) | titlecase}}
+    </div>
+		<div class="categories__posts" *ngFor="let post of categoriesData$ | async">
+      <app-post [postProps]="post"></app-post>
+    </div>
+	</div>
+
+  <ng-template #loader>
+    <h1>Loading....</h1>
+  </ng-template>
+</div>

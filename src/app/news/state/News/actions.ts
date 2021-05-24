@@ -3,7 +3,7 @@ import {TopHeadlinesArticlesInterface} from '../../interfaces/TopHeadlinesInterf
 import {SourcesNewsInterface} from '../../interfaces/SourcesNewsResponse.interface';
 
 export enum NewsActionTypes {
-  LOAD_EVERYTHING_NEWS = '[NEWS_EVERYTHING] Load Everything News ',
+  LOAD_EVERYTHING_NEWS = '[NEWS_EVERYTHING] Load Everything News',
   LOAD_EVERYTHING_NEWS_SUCCESS = '[NEWS_EVERYTHING] Load Everything News Success',
   LOAD_EVERYTHING_NEWS_FAIL = '[NEWS_EVERYTHING] Load Everything News Fail',
 
@@ -54,9 +54,7 @@ export class LoadCategoriesNewsFail implements Action {
   readonly type = NewsActionTypes.LOAD_CATEGORIES_NEWS_FAIL;
   constructor(public payload: any) {
   }
-
 }
-
 
 export class LoadEverythingNews implements Action {
   readonly type = NewsActionTypes.LOAD_EVERYTHING_NEWS;

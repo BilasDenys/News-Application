@@ -1,0 +1,43 @@
+@import "../../../../styles.scss";
+
+.source {
+  box-shadow: $shadow__34;
+  border-radius: $border_radius;
+  margin: 1rem;
+  padding: 1.25rem;
+
+  &__top {
+    display: flex;
+		margin-bottom: .5rem ;
+    justify-content: space-between;
+  }
+
+	&__name {
+		font-weight: 500;
+	}
+
+	&__category {
+		color: #cccccc;
+	}
+
+  &__action {
+    text-align: end;
+		margin-top: 1rem;
+  }
+	&__description {
+		// color: #5a5a5a;
+		font-weight: 300;
+	}
+
+  &__link {
+		
+    padding: 0.5rem 0.75rem;
+    box-shadow: $shadow__34;
+    border-radius: $border_radius;
+    color: #202020;
+    &:hover {
+      background-color: #fafafa;
+      color: #484848;
+    }
+  }
+}

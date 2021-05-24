@@ -1,0 +1,124 @@
+@import "../../../../styles.scss";
+
+.navbar {
+  padding: 1.25rem;
+  box-shadow: $shadow__34;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.menu {
+  &__list {
+    margin-right: .25rem;
+  }
+  &__link {
+    padding: 1rem;
+    color: #202020;
+
+    &:hover {
+      background-color: #fafafa;
+      border-radius: $border_radius;
+      color: #484848;
+    }
+  }
+}
+input {
+  &::placeholder {
+    padding: 1rem;
+  }
+}
+
+.active {
+  background-color: #fafafa;
+  border-radius: $border_radius;
+  color: #484848;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+
+  &__control {
+    margin-right: .5rem;
+  }
+
+  &__select {
+
+  }
+}
+
+
+
+@media (max-width: 320px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0.75rem 0;
+    &__link {
+      padding: 0.25rem 1.25rem;
+    }
+
+    &__list {
+      margin: 0.25rem;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0.75rem 0;
+    &__link {
+      padding: 0.25rem 1.25rem;
+    }
+
+    &__list {
+      margin: 0.25rem;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+
+	.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+	.menu {
+		margin: 1rem 0;
+
+		&__link {
+      padding: .5rem 1rem;
+    }
+	}
+
+}

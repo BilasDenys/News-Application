@@ -1,21 +1,40 @@
-import { Component, OnInit } from '@angular/core';
-import {Store} from '@ngrx/store';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {select, Store} from '@ngrx/store';
 import {NewsState} from '../../state';
-import {LoadEverythingNews, LoadTopHeadlines} from '../../state/News/actions';
+import {Observable, Subscription} from 'rxjs';
+import {TopHeadlinesArticlesInterface} from '../../interfaces/TopHeadlinesInterface.interface';
+import {selectEverythingNewsData, selectLoadingStatus, selectNewsError} from '../../state/News/selectors';
+import {ActivatedRoute, Params} from '@angular/router';
+import {LoadEverythingNews} from '../../state/News/actions';
 
 @Component({
   selector: 'app-everything',
   templateUrl: './everything.component.html',
   styleUrls: ['./everything.component.scss']
 })
-export class EverythingComponent implements OnInit {
-  constructor(private store$: Store<NewsState>) { }
+export class EverythingComponent implements OnInit, OnDestroy {
+  isLoading$: Observable<boolean>;
+  everythingData$: Observable<TopHeadlinesArticlesInterface[]>;
+  error$: Observable<string>;
+  sub: Subscription;
+
+  constructor(private store$: Store<NewsState>, private route: ActivatedRoute) {
+  }
 
   ngOnInit(): void {
-    this.store$.dispatch(new LoadEverythingNews('apple'));
-    // this.store$.pipe(select(selectTopHeadlinesData)).subscribe(selector => {
-    //   console.log('select item from state', selector);
-    // });
+    this.sub = this.route.params.subscribe(({query}: Params) => {
+      this.store$.dispatch(new LoadEverythingNews(query));
+    });
+
+    this.everythingData$ = this.store$.pipe(select(selectEverythingNewsData));
+    this.error$ = this.store$.pipe(select(selectNewsError));
+    this.isLoading$ = this.store$.pipe(select(selectLoadingStatus));
+  }
+
+  ngOnDestroy(): void {
+    if (this.sub) {
+    }
+    this.sub.unsubscribe();
   }
 
 }

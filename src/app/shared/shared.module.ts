@@ -1,17 +1,20 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
-import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-import { FooterComponent } from './components/footer/footer.component';
-
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
-  declarations: [NavBarComponent, FooterComponent],
+  declarations: [],
   imports: [
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  exports: [HttpClientModule, NavBarComponent, FooterComponent]
+  exports: [
+    HttpClientModule,
+    ReactiveFormsModule
+  ],
 })
-export class SharedModule { }
+export class SharedModule {
+}
